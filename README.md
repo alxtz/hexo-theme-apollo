@@ -1,47 +1,20 @@
-![hexo-theme-apollo](https://cloud.githubusercontent.com/assets/9530963/13026956/08e76eca-d277-11e5-8bfc-2e80cea20a0d.png)
+## 註: 此版本的 hexo-theme-apollo 是從 [原 repo](https://github.com/pinggod/hexo-theme-apollo/) fork 而來
+- 因為 jade 這個專案已經整個改名，並轉換為 pug 了
+- 有許多 jade 相關的套件 (像是 hexo-renderer-jade) 已經年久失修，所以這邊做了一個 pug 版本
+- 原專案 hexo-theme-apollo 目前也不收任何 PR (所以現在 fork 400 多個)，對 hexo-theme-apollo-pug 有興趣可以發 issue (或直接 fork 走)
 
-## 文档
-
-- [中文文档](https://github.com/pinggod/hexo-theme-apollo/blob/master/doc%2Fdoc-zh.md)
-- [Document](https://github.com/pinggod/hexo-theme-apollo/blob/master/doc%2Fdoc-en.md)
-
-## 贡献
-
-该项目不再接受添加新特性、功能的 pull request，所有创造性的想法请 fork 该项目之后自由发挥。
+## 修改內容：
+- 將原本的所有 `*.jade` 檔案都 rename 成 `*.pug`
+- pug 在 `extend` 和 `include` 時都要強制加上副檔名
+  ![](https://i.imgur.com/YEaktI9.png)
+- 下面的安裝 script 也有更新，改成安裝 `hexo-renderer-pug`，以及 hexo 本身慣用的 yarn
 
 ## 安装
-
-[![asciicast](https://asciinema.org/a/emrvroa9054hz6k8ise0uxh2u.png)](https://asciinema.org/a/emrvroa9054hz6k8ise0uxh2u)
-
 ``` bash
-hexo init Blog 
-cd Blog 
-npm install
-npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive
-git clone https://github.com/pinggod/hexo-theme-apollo.git themes/apollo
-```
-
-## 启用
-
-修改 `_config.yml` 的 `theme` 配置项为 `apollo`:
-
-```yaml
-theme: apollo
-
-# 在归档页面显示所有文章
-# 需要上面安装的 hexo-generator-archive 插件支持
-archive_generator:
-    per_page: 0
-    yearly: false
-    monthly: false
-    daily: false
-```
-
-## 更新
-
-``` bash
-cd themes/apollo 
-git pull
+hexo init BLOG
+cd BLOG
+yarn add hexo-renderer-pug hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive
+git clone https://github.com/alxtz/hexo-theme-apollo-pug themes/apollo
 ```
 
 ## License
